@@ -1,3 +1,6 @@
+$near-black: rgb(33, 0, 8);
+$red: #b82525;
+
 .reveal {
   section {
     img {
@@ -5,10 +8,191 @@
       background: none;
       box-shadow: none;
       margin: 0;
+
+      &.shadow {
+        -webkit-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.50);
+      }
     }
+
+    h1, h2, h3, h4, h5, & {
+      color: $near-black;
+      font-weight: 300 !important;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "papaya_sunriseregular", serif;
+      line-height: 2em;
+    }
+
+
+    h5 {
+      font-weight: 400 !important;
+      font-size: 50px;
+      font-family: "Open Sans", serif;
+    }
+
+    h1, h2 {
+      font-weight: 600 !important;
+    }
+
+    font-size: 45px;
+    font-family: "Open Sans", serif;
+
+    ul {
+      list-style: none;
+      margin: 0;
+
+      li:before {
+        content: "-";
+        color: $red;
+        position: relative;
+        left: -25px;
+      }
+
+      li {
+        padding-bottom: 15px;
+      }
+    }
+
+    .accent {
+      color: $red;
+    }
+
+
+    blockquote {
+      color: $near-black;
+      box-shadow: none;
+      font-family: Caveat, serif;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: lighter;
+      text-align: left;
+    }
+
+    .bordered {
+      border-radius: 25px;
+      border: 3px dashed rgba(33, 0, 8, 0.36);;
+      padding: 5px;
+    }
+
+    .white {
+      color: white;
+    }
+
+
+    p.neon {
+      color: #f3fffd;
+      font-family: neoneonregular, monospace;
+      -webkit-animation: neon 1.5s ease-in-out infinite alternate;
+      -moz-animation: neon 1.5s ease-in-out infinite alternate;
+      animation: neon 1.5s ease-in-out infinite alternate;
+      font-size: 5em;
+      padding-top: 70px;
+      text-align: center;
+      margin-top: -60px;
+      text-decoration: none;
+    }
+
+    .big-list {
+      font-family: "papaya_sunriseregular", serif;
+
+      li {
+        padding: 0;
+      }
+
+      li:before {
+        content: "-";
+        font-family: "Open Sans", serif;
+        font-size: 2em;
+      }
+    }
+
+    h3.gaps {
+      span.fragment:not(.visible) {
+        visibility: visible;
+        opacity: 1;
+        background-color: rgba(184, 37, 37, 0.09);
+        color: rgba(184, 37, 37, 0.0);
+      }
+    }
+
+    .missing-glyps {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    span.flicker {
+      -webkit-animation:flicker-1 5s linear infinite both;
+      animation:flicker-1 5s linear infinite both;
+      animation-delay: 1s;
+    }
+
+    #info {
+      padding-top: 100px;
+      h3 {
+        padding-bottom: 50px;
+      }
+      .social {
+        padding-right: 120px;
+        display: flex;
+        &>div {
+          flex: 50%;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .twitter {
+        img {
+          width: 60px;
+          padding-right: 10px;
+          opacity: 0.9;
+        }
+        justify-content: flex-end;
+        padding-right: 50px;
+      }
+      .wrike {
+        justify-content: flex-start;
+        a {
+          padding-right: 10px;
+        }
+        img {
+          width: 60px;
+          padding-right: 10px;
+          opacity: 0.9;
+        }
+
+      }
+
+      img.small-logo {
+        width: 50px;
+        margin: 0;
+        vertical-align: middle;
+        border-radius: 0;
+        padding-right: 5px;
+      }
+
+      a {
+        color: $near-black;
+      }
+    }
+
   }
 }
 
+#credits {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+
+  &, a, a:visited, a:hover {
+    color: rgba(0, 0, 0, 0.56);
+    text-decoration: none;
+
+  }
+}
 
 .fullscreen-container {
   position: fixed;
@@ -22,3 +206,258 @@
   justify-content: center;
   display: flex;
 }
+
+//<editor-fold desc="Drippings">
+// Drippings were taken from https://codepen.io/pareshd/pen/xgOEQb
+$drippings-delay: 10s;
+
+#drippings {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
+@mixin leftPos($count) {
+  @for $i from 1 through $count {
+    &:nth-child(#{$i}) {
+      left: ((($i)-2)*13)-1%;
+    }
+  }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  font-family: papaya_sunriseregular, serif;
+  font-size: 8em;
+  font-weight: 900;
+  opacity: 0;
+  animation: fadein 4s forwards;
+  animation-delay: 7.5s;
+}
+
+.liquid {
+  width: 120%;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  background: rgba(0, 0, 0, 0.96);
+  border-radius: 10%;
+  animation: liquid $drippings-delay forwards;
+}
+
+
+.blobs {
+  filter: url('#goo');
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .blob {
+    width: 100px;
+    height: 100px;
+    margin: 0px 100px 0px 0;
+    background: #000000;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    @include leftPos(9);
+    animation: drip_one $drippings-delay forwards;
+
+    &:nth-of-type(4n-7) {
+      width: 130px;
+      animation: drip_four $drippings-delay forwards;
+    }
+
+    &:nth-of-type(3n-2) {
+      width: 52px;
+    }
+
+    &:nth-of-type(2) {
+      width: 44px;
+    }
+
+    &:nth-of-type(8) {
+      animation: drip_five $drippings-delay forwards;
+    }
+
+    &:nth-of-type(4n+2) {
+      height: 112px;
+      animation: drip_two $drippings-delay forwards;
+    }
+
+    &:nth-of-type(6n-2) {
+      height: 84px;
+      animation: drip_three $drippings-delay forwards;
+    }
+  }
+
+}
+
+
+#credits {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  &, a, a:visited, a:hover {
+    color: rgba(0, 0, 0, 0.56)
+  }
+}
+
+@keyframes drip_one {
+  from {
+    top: 0;
+  }
+  to {
+    top: 103%;
+  }
+}
+
+@keyframes drip_two {
+  from {
+    top: 0;
+  }
+  to {
+    top: 104%;
+  }
+}
+
+@keyframes drip_three {
+  from {
+    top: 0;
+    height: 104px;
+  }
+  to {
+    top: 102%;
+    height: 264px;
+  }
+}
+
+@keyframes drip_four {
+  from {
+    top: 0;
+    width: 130px;
+    height: 60px;
+  }
+  to {
+    top: 102%;
+    width: 150px;
+    height: 90px;
+  }
+}
+
+@keyframes drip_five {
+  from {
+    top: 0;
+    height: 60px;
+  }
+  to {
+    top: 102%;
+    height: 144px;
+  }
+}
+
+@keyframes liquid {
+  from {
+    height: 30px;
+  }
+  to {
+    height: 109%;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//</editor-fold>
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-9-18 22:57:10
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    -webkit-transform: translateZ(-300px) translateY(100px);
+    transform: translateZ(-300px) translateY(100px);
+    opacity: 0
+  }
+  40% {
+    opacity: .6
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1
+  }
+}
+
+@keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -.5em;
+    -webkit-transform: translateZ(-700px) translateY(500px);
+    transform: translateZ(-700px) translateY(500px);
+    opacity: 0
+  }
+  40% {
+    opacity: .6
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1
+  }
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-9-18 23:16:46
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes flicker-1{0%,100%{opacity:1}41.99%{opacity:1}42%{opacity:0}43%{opacity:0}43.01%{opacity:1}47.99%{opacity:1}48%{opacity:0}49%{opacity:0}49.01%{opacity:1}}@keyframes flicker-1{0%,100%{opacity:1}41.99%{opacity:1}42%{opacity:0}43%{opacity:0}43.01%{opacity:1}47.99%{opacity:1}48%{opacity:0}49%{opacity:0}49.01%{opacity:1}}
