@@ -25,17 +25,19 @@
   .reveal section h1, .reveal section h2 {
     font-weight: 600 !important; }
   .reveal section ul {
-    font-family: "Roboto", serif;
-    list-style: none;
-    margin: 0; }
+    font-weight: 100;
+    font-size: 0.7em;
+    color: #210008;
+    padding-left: 25px;
+    font-family: "papaya_sunriseregular", serif;
+    list-style: none; }
     .reveal section ul li:before {
       content: "-";
       color: #b82525;
       position: relative;
-      left: -25px;
-      font-family: "Roboto", serif; }
-    .reveal section ul li {
-      padding-bottom: 15px; }
+      left: -20px;
+      font-size: 1.8em;
+      font-family: "Open Sans", serif; }
     .reveal section ul.conclusion {
       font-weight: 100;
       font-size: 0.7em;
@@ -249,3 +251,31 @@
     opacity: 0; }
   49.01% {
     opacity: 1; } }
+
+@keyframes blur {
+  0% {
+    filter: blur(0px);
+    opacity: 100%; }
+  100% {
+    filter: blur(50px);
+    opacity: 50%; } }
+
+div.slide-background.present[data-background-hash="0video/clever.mp4nullnullnullnullnullnull"] {
+  animation: blur 1s forwards;
+  animation-delay: 4s; }
+
+div.slide-background.present[data-background-hash="img/wasm.pngnullnullnullnullwhitenullnullnonenull"] {
+  filter: blur(20px);
+  opacity: 50%; }
+
+div.slide-background.present[data-background-hash="img/npm.pngnullnullnullnullwhitenullnullnonenull"] {
+  filter: blur(20px);
+  opacity: 50%; }
+
+div.slide-background.present[data-background-hash="img/fugu.pngnullnullnullnullwhitenullnullnonenull"] {
+  filter: blur(20px);
+  opacity: 50%; }
+
+div.slide-background.present[data-background-hash="img/ts.pngnullnullnullnullwhitenullnullnonenull"] {
+  filter: blur(20px);
+  opacity: 50%; }
