@@ -13,27 +13,56 @@
   .reveal section h1, .reveal section h2, .reveal section h3, .reveal section h4, .reveal section h5, .reveal section {
     color: #210008;
     font-weight: 300 !important; }
+    .reveal section h1.white, .reveal section h2.white, .reveal section h3.white, .reveal section h4.white, .reveal section h5.white, .reveal section.white {
+      color: whitesmoke; }
   .reveal section h1, .reveal section h2, .reveal section h3, .reveal section h4 {
     font-family: "papaya_sunriseregular", serif;
     line-height: 2em; }
   .reveal section h5 {
     font-weight: 400 !important;
     font-size: 50px;
-    font-family: "Open Sans", serif; }
+    font-family: "Roboto", serif; }
   .reveal section h1, .reveal section h2 {
     font-weight: 600 !important; }
   .reveal section ul {
+    font-family: "Roboto", serif;
     list-style: none;
     margin: 0; }
     .reveal section ul li:before {
       content: "-";
       color: #b82525;
       position: relative;
-      left: -25px; }
+      left: -25px;
+      font-family: "Roboto", serif; }
     .reveal section ul li {
       padding-bottom: 15px; }
+    .reveal section ul.conclusion {
+      font-weight: 100;
+      font-size: 0.7em;
+      color: whitesmoke;
+      padding-left: 25px;
+      font-family: "papaya_sunriseregular", serif; }
+      .reveal section ul.conclusion li:before {
+        content: "-";
+        color: whitesmoke;
+        position: relative;
+        left: -20px;
+        font-size: 1.3em;
+        font-family: "Roboto", serif; }
   .reveal section .accent {
     color: #b82525; }
+  .reveal section .me {
+    -webkit-animation: spin 5s spin 5s linear infinite;
+    -moz-animation: spin 5s spin 5s linear infinite;
+    animation: spin 5s linear infinite;
+    width: 200px; }
+  .reveal section .spinned {
+    animation: spin 30s linear infinite; }
+  .reveal section .corner {
+    font-size: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px; }
   .reveal section blockquote {
     color: #210008;
     box-shadow: none;
@@ -48,6 +77,16 @@
     padding: 5px; }
   .reveal section .white {
     color: white; }
+  .reveal section pre {
+    box-shadow: none; }
+  .reveal section code {
+    background-color: white;
+    padding: 20px;
+    max-height: 2000px;
+    font-size: 27px;
+    line-height: 34px;
+    overflow: hidden;
+    font-family: Menlo, monospace; }
   .reveal section p.neon {
     color: #f3fffd;
     font-family: neoneonregular, monospace;
@@ -59,6 +98,11 @@
     text-align: center;
     margin-top: -60px;
     text-decoration: none; }
+  .reveal section .graphql {
+    animation: growandspin 20s;
+    animation-delay: 1s;
+    width: 500px;
+    height: 500px; }
   .reveal section .big-list {
     font-family: "papaya_sunriseregular", serif; }
     .reveal section .big-list li {
@@ -78,40 +122,28 @@
     -webkit-animation: flicker-1 5s linear infinite both;
     animation: flicker-1 5s linear infinite both;
     animation-delay: 1s; }
-  .reveal section #info {
-    padding-top: 100px; }
-    .reveal section #info h3 {
-      padding-bottom: 50px; }
-    .reveal section #info .social {
-      padding-right: 120px;
-      display: flex; }
-      .reveal section #info .social > div {
-        flex: 50%;
-        display: flex;
-        align-items: center; }
-    .reveal section #info .twitter {
-      justify-content: flex-end;
-      padding-right: 50px; }
-      .reveal section #info .twitter img {
-        width: 60px;
-        padding-right: 10px;
-        opacity: 0.9; }
-    .reveal section #info .wrike {
-      justify-content: flex-start; }
-      .reveal section #info .wrike a {
-        padding-right: 10px; }
-      .reveal section #info .wrike img {
-        width: 60px;
-        padding-right: 10px;
-        opacity: 0.9; }
-    .reveal section #info img.small-logo {
-      width: 50px;
-      margin: 0;
-      vertical-align: middle;
-      border-radius: 0;
-      padding-right: 5px; }
-    .reveal section #info a {
+  .reveal section #info .container {
+    padding-bottom: 30px; }
+    .reveal section #info .container img {
+      width: 90px;
+      float: left;
+      padding-right: 20px; }
+    .reveal section #info .container h4 {
+      display: inline;
+      font-size: 0.9em; }
+  .reveal section .instructions {
+    font-family: roboto_mono, monospace;
+    font-size: 20px; }
+    .reveal section .instructions a {
       color: #210008; }
+      .reveal section .instructions a:hover {
+        text-decoration: underline; }
+    .reveal section .instructions .hint {
+      background-color: #ffcc68;
+      margin-right: 10px;
+      padding: 0 10px 0 10px; }
+    .reveal section .instructions li:before {
+      content: ""; }
 
 #credits {
   display: none;
@@ -122,162 +154,6 @@
   #credits, #credits a, #credits a:visited, #credits a:hover {
     color: rgba(0, 0, 0, 0.56);
     text-decoration: none; }
-
-.fullscreen-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  display: flex; }
-
-#drippings {
-  display: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 10000; }
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative; }
-
-.text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #ffffff;
-  font-family: papaya_sunriseregular, serif;
-  font-size: 8em;
-  font-weight: 900;
-  opacity: 0;
-  animation: fadein 4s forwards;
-  animation-delay: 7.5s; }
-
-.liquid {
-  width: 120%;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  left: -10%;
-  background: rgba(0, 0, 0, 0.96);
-  border-radius: 10%;
-  animation: liquid 10s forwards; }
-
-.blobs {
-  filter: url("#goo");
-  width: 100%;
-  height: 100%;
-  position: relative; }
-  .blobs .blob {
-    width: 100px;
-    height: 100px;
-    margin: 0px 100px 0px 0;
-    background: #000000;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    animation: drip_one 10s forwards; }
-    .blobs .blob:nth-child(1) {
-      left: -14%; }
-    .blobs .blob:nth-child(2) {
-      left: -1%; }
-    .blobs .blob:nth-child(3) {
-      left: 12%; }
-    .blobs .blob:nth-child(4) {
-      left: 25%; }
-    .blobs .blob:nth-child(5) {
-      left: 38%; }
-    .blobs .blob:nth-child(6) {
-      left: 51%; }
-    .blobs .blob:nth-child(7) {
-      left: 64%; }
-    .blobs .blob:nth-child(8) {
-      left: 77%; }
-    .blobs .blob:nth-child(9) {
-      left: 90%; }
-    .blobs .blob:nth-of-type(4n-7) {
-      width: 130px;
-      animation: drip_four 10s forwards; }
-    .blobs .blob:nth-of-type(3n-2) {
-      width: 52px; }
-    .blobs .blob:nth-of-type(2) {
-      width: 44px; }
-    .blobs .blob:nth-of-type(8) {
-      animation: drip_five 10s forwards; }
-    .blobs .blob:nth-of-type(4n+2) {
-      height: 112px;
-      animation: drip_two 10s forwards; }
-    .blobs .blob:nth-of-type(6n-2) {
-      height: 84px;
-      animation: drip_three 10s forwards; }
-
-#credits {
-  display: none;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center; }
-  #credits, #credits a, #credits a:visited, #credits a:hover {
-    color: rgba(0, 0, 0, 0.56); }
-
-@keyframes drip_one {
-  from {
-    top: 0; }
-  to {
-    top: 103%; } }
-
-@keyframes drip_two {
-  from {
-    top: 0; }
-  to {
-    top: 104%; } }
-
-@keyframes drip_three {
-  from {
-    top: 0;
-    height: 104px; }
-  to {
-    top: 102%;
-    height: 264px; } }
-
-@keyframes drip_four {
-  from {
-    top: 0;
-    width: 130px;
-    height: 60px; }
-  to {
-    top: 102%;
-    width: 150px;
-    height: 90px; } }
-
-@keyframes drip_five {
-  from {
-    top: 0;
-    height: 60px; }
-  to {
-    top: 102%;
-    height: 144px; } }
-
-@keyframes liquid {
-  from {
-    height: 30px; }
-  to {
-    height: 109%; } }
-
-@keyframes fadein {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
 
 @keyframes spin {
   0% {
@@ -321,6 +197,12 @@
     -webkit-transform: translateZ(0) translateY(0);
     transform: translateZ(0) translateY(0);
     opacity: 1; } }
+
+@keyframes growandspin {
+  from {
+    transform: scale(0) rotate(0deg); }
+  to {
+    transform: scale(1) rotate(360deg); } }
 
 /* ----------------------------------------------
  * Generated by Animista on 2019-9-18 23:16:46

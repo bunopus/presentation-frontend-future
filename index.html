@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>FRONTEND FUTURE</title>
+	<title>Frontend future</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="plugin/highlight/github-gist.css">
 	<link href="font/font.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="dist/custom.css">
@@ -23,8 +23,23 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
+			<section>
+				<p>
+				<h3>Evgeny kot<span
+						style="font-family: missed_glyphs,serif; font-size: 90px; margin-bottom: 40px">-</span> Quo
+					vadis<span class="missing-glyps">,</span> <span class="accent">frontend</span>?</h3>
+
+				<ul class="instructions">
+					<li><span class="hint">HINT #1:</span> wait for the "loading" to disappear</li>
+					<li><span class="hint">HINT #2:</span> ESC - structure, SPACE, →↓←↑ - navigate</li>
+				</ul>
+				</p>
+			</section>
 			<section data-background="#FFFFFF"><img class="fragment" data-duration="2" data-animate="fadeIn"
 					src="img/ministry.png"></section>
+			<section data-auto-animate><img src="img/me.png" class="me"></section>
+			<section data-auto-animate>
+				<img src="img/me-twitter.png"></section>
 			<section data-background="img/bg.png">
 				<div>
 					<p class="neon">FRONTEND</p>
@@ -56,11 +71,311 @@
 			</section>
 			<section data-auto-animate>
 				<h2>Quo vadis<span class="missing-glyps">,</span> <span class="accent">frontend</span>?</h2>
-				<!-- <h3 style="opacity: 0;">top 10 trands</h3> -->
 			</section>
 			<section data-auto-animate>
 				<h2>Quo vadis<span class="missing-glyps">,</span> <span class="accent">frontend</span>?</h2>
 				<h3>top 10 trends</h3>
+			</section>
+			<section>
+				<section>Disclamer #1:<br>
+					<img src="img/tweet.png" style="width: 450px;"></section>
+				<section data-background="img/graph.png"></section>
+			</section>
+			<section>Disclamer #2 <br>
+				<img src="img/frontend.png"></section>
+			<section>
+				<section>
+					<h2>10</h2>
+				</section>
+				<section>
+					<h3>HTTP<span class="missing-glyps accent">/</span> 3</h3>
+				</section>
+				<section data-auto-animate><img src="img/http-1.png"></section>
+				<section data-auto-animate><img src="img/http-2.png"></section>
+				<section>
+					<h5>QUIC</h5>
+					<ul>
+						<li class="fragment">multiplexing and better error management</li>
+						<li class="fragment">controls network congestion better</li>
+						<li class="fragment">uses the HTTP/2 priority mechanism</li>
+						<li class="fragment">better network usage</li>
+						<li class="fragment">requires less CPU</li>
+						<li class="fragment">allows connection migrations</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>9</h2>
+				</section>
+				<section>
+					<h2><span class="accent">Smart</span> rendering</h2>
+				</section>
+				<section data-background="img/frameworks/1.png"></section>
+				<section data-background="img/frameworks/2.png"></section>
+				<section data-background="img/frameworks/3.png"></section>
+				<section data-background="img/frameworks/3_1.png"></section>
+				<section data-background="img/frameworks/4.png"></section>
+				<section><img src="img/frameworks/5.png"></section>
+			</section>
+			<section>
+				<section>
+					<h2>8</h2>
+				</section>
+				<section>
+					<h3>One store <span class="missing-glyps accent" style="font-size: 2em;">-</span> multiple stores
+					</h3>
+				</section>
+				<section data-transition="none"><img src="img/state/0.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/3.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/4.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/5.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/6.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/7.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/8.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/9.png" style="width: 770px;"></section>
+				<section data-transition="none"><img src="img/state/10.png" style="width: 770px;"></section>
+				<section><img src="img/state/1.png"></section>
+				<section><img src="img/state/2.png"></section>
+				<section data-background="img/graphql-bg.png"></section>
+				<section data-background="img/graphql-bg-blur.png" data-background-transition="none"
+					data-transition="none"><img src="img/graphql-logo.png" class="graphql"></section>
+				<section>
+					<h5>Examples</h5>
+					<ul>
+						<li class="fragment">react-query</li>
+					</ul>
+				</section>
+				<section data-background="img/state/query.png"></section>
+				<section>
+					<h5>Examples</h5>
+					<ul>
+						<li>react-query</li>
+						<li class="fragment">SWR</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code data-trim class="stretch">
+						import useSWR from 'swr'
+						function Profile() {
+						  const {data, error} = useSWR('/api/user',fetcher)
+						  if (error) return <div>failed to load</div>
+						  if (!data) return <div>loading...</div>
+						  return <div>hello {data.name}!</div>
+						}
+					</code></pre>
+				</section>
+				<section>
+					<h5>Examples</h5>
+					<ul>
+						<li>react-query</li>
+						<li>SWR</li>
+						<li class="fragment">Effector</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code data-trim class="stretch">
+import {createStore, createEvent} from 'effector'
+import {useStore} from 'effector-react'
+
+const increment = createEvent()
+const decrement = createEvent()
+const resetCounter = createEvent()
+
+const counter = createStore(0)
+  .on(increment, state => state + 1)
+  .on(decrement, state => state - 1)
+  .reset(resetCounter)
+
+counter.watch(console.log)
+
+const Counter = () => {
+  const value = useStore(counter)
+  return <div>{value}</div>
+}
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h2>7</h2>
+				</section>
+				<section data-auto-animate>
+					<h2 class="accent">7</h2>
+					<h2>BUNDLERS</h3>
+				</section>
+				<section>
+					<h4>JavaScript modules</h4>
+					<pre><code data-trim class="stretch">
+						import { slides } from './modules/present.js';
+					</code></pre>
+				</section>
+				<section>
+					<h4>JavaScript modules support</h4>
+					<img src="img/import-support.png">
+				</section>
+				<section>
+					<img src="img/webpack.png">
+				</section>
+				<section>
+					<h4>New bundlers</h4>
+					<ul>
+						<li>esbuild</li>
+						<li class="fragment">snowpack 2</li>
+						<li class="fragment">vite</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section data-auto-animate>
+					<h2>6</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>6</h2>
+					<h2>A<span class="accent">11</span>Y</h3>
+				</section>
+				<section><img src="img/a11y.png" style="width: 400px;" class="spinned"></section>
+				<section><img src="img/a11y-laws.png"></section>
+			</section>
+			<section>
+				<section data-auto-animate data-background="img/lighthouse.png">
+					<h2 style="color: white;" data-animate="fadeIn" data-delay="1">5</h2>
+				</section>
+				<section data-auto-animate data-background="img/lighthouse.png" data-background-blur>
+					<h2 class="accent">5</h2>
+					<h2>Web Vitals</h2>
+				</section>
+				<section data-auto-animate>
+					<h4>New metrics</h4>
+					<img src="img/vitals.png">
+				</section>
+				<section data-auto-animate>
+					<h4>New metrics</h4>
+					<img src="img/metrics.png">
+				</section>
+			</section>
+			<section>
+				<section data-background="img/wasm.png"></section>
+				<section data-background="img/wasm.png" data-background-blur data-auto-animate>
+					<h2 data-animate="fadeIn" data-delay="1">4</h2>
+				</section>
+				<section data-background="img/wasm.png" data-background-blur data-auto-animate>
+					<h2 class="accent">4</h2>
+					<h2>Web assembly</h2>
+				</section>
+				<section data-auto-animate>
+					<h4>Garbage collection</h4>
+					<img src="img/wasm-gc.png">
+				</section>
+				<section data-auto-animate>
+					<h4>Garbage collection</h4>
+					<img src="img/wasm-gc-answer.png">
+				</section>
+			</section>
+			<section>
+				<section data-background="img/npm.png"></section>
+				<section data-background="img/npm.png" data-background-blur data-auto-animate>
+					<h2 data-animate="fadeIn" data-delay="1">3</h2>
+				</section>
+				<section data-background="img/npm.png" data-background-blur data-auto-animate>
+					<h2 class="accent">3</h2>
+					<h2>Micro frontends</h2>
+				</section>
+				<section><img src="img/state/0.png" style="width: 770px;"></section>
+				<section><img src="img/fowler-1.png"></section>
+				<section><img src="img/fowler-2.png"></section>
+			</section>
+			<section>
+				<section data-background="img/fugu.png"></section>
+				<section data-background="img/fugu.png" data-background-blur data-auto-animate>
+					<h2 data-animate="fadeIn" data-delay="1">2</h2>
+				</section>
+				<section data-background="img/fugu.png" data-background-blur data-auto-animate>
+					<h2 class="accent">2</h2>
+					<h2>Web platform</h2>
+				</section>
+				<section><a href="https://web.dev/fugu-status/">https://web.dev/fugu-status/</a></section>
+			</section>
+			<section>
+				<section data-background="img/ts.png"></section>
+				<section data-background="img/ts.png" data-background-blur data-auto-animate>
+					<h2 data-animate="fadeIn" data-delay="1">1</h2>
+				</section>
+				<section data-background="img/ts.png" data-background-blur data-auto-animate>
+					<h2 class="accent">1</h2>
+					<h2>Typescript</h2>
+				</section>
+				<section><a
+						href="https://madnight.github.io/githut/#/pull_requests/2020/3">https://madnight.github.io/githut/</a>
+				</section>
+			</section>
+
+			<section data-background="img/end.png">
+			</section>
+			<section data-background="img/end-right.png" style="text-align: left;" data-transition="none"
+				data-background-transition="none">
+				<h4 class="white">Conclusion</h4>
+				<ul class="conclusion">
+					<li class="fragment">Learn TS</li>
+					<li class="fragment">Desktop apps are gone</li>
+					<li class="fragment">Learn a11y</li>
+					<li class="fragment">Smaller <span class="missing-glyps" style="font-size: 1.3em;">=</span> better
+					</li>
+				</ul>
+			</section>
+			<section data-background="img/end-right.png" style="text-align: left;">
+				<div id="info">
+					<div class="container"><img src="img/twitter-logo.png">
+						<h4 class="white">bunopus</h4>
+					</div>
+					<div class="container"><img src="img/twitter-logo.png">
+						<h4 class="white">WrikeTechClub</h4>
+					</div>
+				</div>
+			</section>
+
+			<section style="overflow: scroll;">
+				<ul class="instructions">
+					<li><span class="hint">#1: QUIC</span><a
+							href="https://www.humanlevel.com/en/seo-posts/http-3-and-quic-what-do-they-mean-for-the-web.html">HTTP/3
+							and QUIC: what do they mean for the Web?</a></li>
+					<li><span class="hint">#2: Rendering</span><a href="https://github.com/ampproject/worker-dom">Worker
+							Dom prototype</a></li>
+					<li><span class="hint">#3: State</span><a
+							href="https://github.com/tannerlinsley/react-query">react-query - hooks for fetching</a>
+					</li>
+					<li><span class="hint">#4: State</span><a href="https://github.com/vercel/swr">SWR - React Hooks
+							library for remote data fetching</a></li>
+					<li><span class="hint">#5: State</span><a href="https://github.com/effector/effector">Effector - The
+							state manager</a></li>
+					<li><span class="hint">#6: Modules</span><a
+							href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">JS Guide:
+							Modules</a></li>
+					<li><span class="hint">#7: Builders</span><a
+							href="https://dev.to/brandonvilla21/micro-frontends-module-federation-with-webpack-5-426">Webpack
+							5 and module federation</a></li>
+					<li><span class="hint">#8: Builders</span><a href="https://github.com/evanw/esbuild">ESBuild -
+							ultrafast builder</a></li>
+					<li><span class="hint">#9: Builders</span><a href="https://www.snowpack.dev/">Snowpack - ultrafast
+							builder</a></li>
+					<li><span class="hint">#10: Builders</span><a href="https://github.com/vitejs/vite">Vite</a></li>
+					<li><span class="hint">#11: a11y</span><a
+							href="https://dev.to/alfiedarko/frontendsessions-web-accessibility-4eed">Beginners guide to
+							Web Accessibility (a11y)</a></li>
+					<li><span class="hint">#12: a11y</span><a href="https://www.w3.org/WAI/policies/">a11y and laws</a>
+					</li>
+					<li><span class="hint">#13: Metrics</span><a href="https://web.dev/vitals/">Web Vitals</a></li>
+					<li><span class="hint">#14: WASM</span><a href="https://github.com/WebAssembly/gc/issues/44">WASM
+							Garbage Collection roadmap</a></li>
+					<li><span class="hint">#15: Microfrontend</span><a
+							href="https://martinfowler.com/articles/micro-frontends.html">Details about
+							micro-frontends</a></li>
+					<li><span class="hint">#16: Platform</span><a href="https://web.dev/fugu-status/">Project Fugu</a>
+					<li><span class="hint">#17: TS</span><a
+							href="https://madnight.github.io/githut/#/pull_requests/2020/3">GitHut - stats about
+							GitHub</a>
+					</li>
+				</ul>
 			</section>
 		</div>
 	</div>
@@ -75,7 +390,8 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
-
+			progress: false,
+			controls: false,
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
 			dependencies: [
@@ -84,11 +400,12 @@
 				{ src: 'plugin/alt-arrows/alt-arrows.js', async: true },
 				{ src: 'plugin/blur-background/blur-background.js' },
 				{ src: 'plugin/loader-splashscreen/loader-splashscreen.js' },
+				{ src: 'plugin/script-runner/script-runner.js' },
 			],
 			keyboard: {
 				39: 'next',
 				37: 'prev'
-			}
+			},
 		});
 	</script>
 </body>

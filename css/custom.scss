@@ -19,18 +19,23 @@ $red: #b82525;
     h1, h2, h3, h4, h5, & {
       color: $near-black;
       font-weight: 300 !important;
+
+      &.white {
+        color: whitesmoke;
+      }
     }
 
     h1, h2, h3, h4 {
       font-family: "papaya_sunriseregular", serif;
       line-height: 2em;
+
     }
 
 
     h5 {
       font-weight: 400 !important;
       font-size: 50px;
-      font-family: "Open Sans", serif;
+      font-family: "Roboto", serif;
     }
 
     h1, h2 {
@@ -41,6 +46,8 @@ $red: #b82525;
     font-family: "Open Sans", serif;
 
     ul {
+      font-family: "Roboto", serif;
+
       list-style: none;
       margin: 0;
 
@@ -49,10 +56,27 @@ $red: #b82525;
         color: $red;
         position: relative;
         left: -25px;
+        font-family: "Roboto", serif;
       }
 
       li {
         padding-bottom: 15px;
+      }
+
+      &.conclusion {
+        font-weight: 100;
+        font-size: 0.7em;
+        color: whitesmoke;
+        padding-left: 25px;
+        font-family: "papaya_sunriseregular", serif;
+        li:before {
+          content: "-";
+          color: whitesmoke;
+          position: relative;
+          left: -20px;
+          font-size: 1.3em;
+          font-family: "Roboto", serif;
+        }
       }
     }
 
@@ -60,6 +84,23 @@ $red: #b82525;
       color: $red;
     }
 
+    .me {
+        -webkit-animation: spin 5s spin 5s linear infinite;
+        -moz-animation: spin 5s spin 5s linear infinite;
+        animation: spin 5s linear infinite;
+        width: 200px;
+    }
+    .spinned {
+      animation: spin 30s linear infinite;
+    }
+
+    .corner {
+      font-size: 40px;
+      // color: $red;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
 
     blockquote {
       color: $near-black;
@@ -81,6 +122,20 @@ $red: #b82525;
       color: white;
     }
 
+    pre {
+      box-shadow: none;
+    }
+    
+    code {
+      background-color: white;
+      padding: 20px;
+      max-height: 2000px;
+      font-size: 27px;
+      line-height: 34px;
+      overflow: hidden;
+      font-family: Menlo, monospace;
+    
+    }
 
     p.neon {
       color: #f3fffd;
@@ -93,6 +148,14 @@ $red: #b82525;
       text-align: center;
       margin-top: -60px;
       text-decoration: none;
+    }
+
+    .graphql {
+      animation: growandspin 20s;
+      animation-delay: 1s;
+      width: 500px; height: 500px;
+      
+
     }
 
     .big-list {
@@ -129,54 +192,40 @@ $red: #b82525;
     }
 
     #info {
-      padding-top: 100px;
-      h3 {
-        padding-bottom: 50px;
-      }
-      .social {
-        padding-right: 120px;
-        display: flex;
-        &>div {
-          flex: 50%;
-          display: flex;
-          align-items: center;
-        }
-      }
-      .twitter {
-        img {
-          width: 60px;
-          padding-right: 10px;
-          opacity: 0.9;
-        }
-        justify-content: flex-end;
-        padding-right: 50px;
-      }
-      .wrike {
-        justify-content: flex-start;
-        a {
-          padding-right: 10px;
-        }
-        img {
-          width: 60px;
-          padding-right: 10px;
-          opacity: 0.9;
+        .container {
+          padding-bottom: 30px;
+          
+          img {
+            width: 90px;
+            float: left;
+            padding-right: 20px;
+          }
+          h4 {
+            display: inline;
+            font-size: 0.9em;
+          }
         }
 
-      }
-
-      img.small-logo {
-        width: 50px;
-        margin: 0;
-        vertical-align: middle;
-        border-radius: 0;
-        padding-right: 5px;
-      }
-
+    }
+    .instructions {
+      font-family: roboto_mono, monospace;
+      font-size: 20px;
       a {
         color: $near-black;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .hint {
+        background-color: #ffcc68;
+        margin-right: 10px;
+        padding: 0 10px 0 10px;
+      }
+
+      li:before {
+        content: "";
       }
     }
-
   }
 }
 
@@ -193,205 +242,6 @@ $red: #b82525;
 
   }
 }
-
-.fullscreen-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  display: flex;
-}
-
-//<editor-fold desc="Drippings">
-// Drippings were taken from https://codepen.io/pareshd/pen/xgOEQb
-$drippings-delay: 10s;
-
-#drippings {
-  display: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 10000;
-}
-
-@mixin leftPos($count) {
-  @for $i from 1 through $count {
-    &:nth-child(#{$i}) {
-      left: ((($i)-2)*13)-1%;
-    }
-  }
-}
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
-.text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #ffffff;
-  font-family: papaya_sunriseregular, serif;
-  font-size: 8em;
-  font-weight: 900;
-  opacity: 0;
-  animation: fadein 4s forwards;
-  animation-delay: 7.5s;
-}
-
-.liquid {
-  width: 120%;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  left: -10%;
-  background: rgba(0, 0, 0, 0.96);
-  border-radius: 10%;
-  animation: liquid $drippings-delay forwards;
-}
-
-
-.blobs {
-  filter: url('#goo');
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-  .blob {
-    width: 100px;
-    height: 100px;
-    margin: 0px 100px 0px 0;
-    background: #000000;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    @include leftPos(9);
-    animation: drip_one $drippings-delay forwards;
-
-    &:nth-of-type(4n-7) {
-      width: 130px;
-      animation: drip_four $drippings-delay forwards;
-    }
-
-    &:nth-of-type(3n-2) {
-      width: 52px;
-    }
-
-    &:nth-of-type(2) {
-      width: 44px;
-    }
-
-    &:nth-of-type(8) {
-      animation: drip_five $drippings-delay forwards;
-    }
-
-    &:nth-of-type(4n+2) {
-      height: 112px;
-      animation: drip_two $drippings-delay forwards;
-    }
-
-    &:nth-of-type(6n-2) {
-      height: 84px;
-      animation: drip_three $drippings-delay forwards;
-    }
-  }
-
-}
-
-
-#credits {
-  display: none;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  &, a, a:visited, a:hover {
-    color: rgba(0, 0, 0, 0.56)
-  }
-}
-
-@keyframes drip_one {
-  from {
-    top: 0;
-  }
-  to {
-    top: 103%;
-  }
-}
-
-@keyframes drip_two {
-  from {
-    top: 0;
-  }
-  to {
-    top: 104%;
-  }
-}
-
-@keyframes drip_three {
-  from {
-    top: 0;
-    height: 104px;
-  }
-  to {
-    top: 102%;
-    height: 264px;
-  }
-}
-
-@keyframes drip_four {
-  from {
-    top: 0;
-    width: 130px;
-    height: 60px;
-  }
-  to {
-    top: 102%;
-    width: 150px;
-    height: 90px;
-  }
-}
-
-@keyframes drip_five {
-  from {
-    top: 0;
-    height: 60px;
-  }
-  to {
-    top: 102%;
-    height: 144px;
-  }
-}
-
-@keyframes liquid {
-  from {
-    height: 30px;
-  }
-  to {
-    height: 109%;
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-//</editor-fold>
 
 
 @keyframes spin {
@@ -453,6 +303,15 @@ $drippings-delay: 10s;
 }
 
 
+@keyframes growandspin {
+  from {
+    transform: scale(0) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+
+  }
+}
 /* ----------------------------------------------
  * Generated by Animista on 2019-9-18 23:16:46
  * Licensed under FreeBSD License.
