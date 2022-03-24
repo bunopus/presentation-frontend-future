@@ -29,10 +29,11 @@
 						style="font-family: missed_glyphs,serif; font-size: 90px; margin-bottom: 40px">-</span> Quo
 					vadis<span class="missing-glyps">,</span> <span class="accent">frontend</span>?</h3>
 
-				<!-- <ul class="instructions">
+				<ul class="instructions">
 					<li><span class="hint">HINT #1:</span> wait for the "loading" to disappear</li>
 					<li><span class="hint">HINT #2:</span> ESC - structure, SPACE, →↓←↑ - navigate</li>
-				</ul> -->
+					<li><span class="hint">HINT #3:</span> 16:9 - best screen ratio!</li>
+				</ul>
 				</p>
 			</section>
 			<section data-background="#FFFFFF"><img class="fragment" data-duration="2" data-animate="fadeIn"
@@ -83,7 +84,7 @@
 					<img src="img/tweet.png" style="width: 450px;">
 				</section>
 				<section data-background="img/graph.png"></section>
-				<section><img src="img/cup.png"></section>
+				<section><img src="img/cup.png" class="shadowed"></section>
 
 			</section>
 			<section>Disclamer #2:<br>
@@ -101,7 +102,7 @@
 				<section><img src="img/http-1.png"></section>
 				<section data-transition="none" data-background-transition="none"><img src="img/http-2.png"></section>
 				<section>
-					<h4>QUIC</h5>
+					<h4>QUIC</h4>
 						<ul>
 							<li class="fragment">multiplexing and better error management</li>
 							<li class="fragment">controls network congestion better</li>
@@ -111,6 +112,7 @@
 							<li class="fragment">allows connection migrations</li>
 						</ul>
 				</section>
+				<section><img src="img/canihttp3.png" class="shadowed r-stretch"></section>
 			</section>
 			<section>
 				<section>
@@ -125,6 +127,18 @@
 				<section data-background="img/frameworks/3_1.png"></section>
 				<section data-background="img/frameworks/4.png"></section>
 				<section><img src="img/frameworks/5.png"></section>
+				<section data-background="img/ssr.jpeg" data-background-size="cover"></section>
+				<section data-auto-animate>
+					<h3>SSR</h3>
+				</section>
+				<section data-auto-animate>
+					<h3>SSR</h3>
+						<ul>
+							<li class="fragment">Next.js</li>
+							<li class="fragment">Remix</li>
+							<li class="fragment">Gatsby??</li>
+						</ul>
+				</section>
 			</section>
 			<section>
 				<section data-auto-animate>
@@ -204,6 +218,16 @@ const Counter = () => {
 }
 					</code></pre>
 				</section>
+				<section>
+					<h4>Examples</h4>
+					<ul>
+						<li>react-query</li>
+						<li>SWR</li>
+						<li>Effector</li>
+						<li class="fragment">Remix</li>
+					</ul>
+				</section>
+				<section data-background-color="black"><img src="img/remix.png"></section>
 			</section>
 			<section>
 				<section data-auto-animate>
@@ -255,32 +279,25 @@ const Counter = () => {
 					<h2>Web Vitals</h2>
 				</section>
 				<section data-auto-animate>
-					<h4>New metrics</h4>
+					<h4>Metrics</h4>
 					<img src="img/vitals.png">
 				</section>
 				<section data-auto-animate>
-					<h4>New metrics</h4>
+					<h4>Metrics</h4>
 					<img src="img/metrics.png">
 				</section>
 			</section>
 			<section>
-				<section data-background="img/wasm.png"></section>
-				<section data-background="img/wasm.png" data-background-blur data-auto-animate>
+				<section data-background="img/fugu.png"></section>
+				<section data-background="img/fugu.png" data-background-blur data-auto-animate>
 					<h2 data-animate="fadeIn" data-delay="1">4</h2>
 				</section>
-				<section data-background="img/wasm.png" data-background-color="white" data-auto-animate
+				<section data-background="img/fugu.png" data-background-color="white" data-auto-animate
 					data-background-transition="none">
 					<h2 class="accent">4</h2>
-					<h2>Web assembly</h2>
+					<h2>Web platform</h2>
 				</section>
-				<section data-auto-animate>
-					<h4>Garbage collection</h4>
-					<img src="img/wasm-gc.png">
-				</section>
-				<section data-auto-animate>
-					<h4>Garbage collection</h4>
-					<img src="img/wasm-gc-answer.png">
-				</section>
+				<section><a href="https://web.dev/fugu-status/">https://web.dev/fugu-status/</a></section>
 			</section>
 			<section>
 				<section data-background="img/npm.png"></section>
@@ -297,16 +314,39 @@ const Counter = () => {
 				<section><img src="img/fowler-2.png"></section>
 			</section>
 			<section>
-				<section data-background="img/fugu.png"></section>
-				<section data-background="img/fugu.png" data-background-blur data-auto-animate>
+				<section data-background="img/hacker.jpeg"></section>
+				<section data-background="img/hacker.jpeg" data-background-blur data-auto-animate>
 					<h2 data-animate="fadeIn" data-delay="1">2</h2>
 				</section>
-				<section data-background="img/fugu.png" data-background-color="white" data-auto-animate
-					data-background-transition="none">
+				<section data-background="img/hacker.jpeg" data-background-color="white" data-auto-animate
+					data-background-transition="none" data-background-blur>
 					<h2 class="accent">2</h2>
-					<h2>Web platform</h2>
+					<h2>One man team</h2>
 				</section>
-				<section><a href="https://web.dev/fugu-status/">https://web.dev/fugu-status/</a></section>
+				<section>
+					<div class="r-stack" style="position:relative; height: 500px;">
+						<img class="fragment" src="img/logos/twilio.png" width="400px" style="position:absolute;top:10px;transform: rotate(-5deg);" data-animate="headShake">
+						<img class="fragment" src="img/logos/firebase.png" width="400" style="position:absolute;right:10px;transform: rotate(6deg);" data-animate="headShake">
+						<img class="fragment" src="img/logos/supa.svg" width="400" style="position:absolute; left: 300px; top: 150px" data-animate="headShake">
+						<img class="fragment" src="img/logos/fauna.png" width="400" style="position:absolute; left: 20px; bottom: 10px; transform: rotate(6deg);" data-animate="headShake">
+						<img class="fragment" src="img/logos/vox.png" width="400" style="position:absolute; right: 20px; bottom: 10px; transform: rotate(-7deg);" data-animate="headShake">
+						<img class="fragment" src="img/logos/lambda.png" width="100" style="position:absolute; left: 430px; top: 250px" data-animate="headShake">
+					  </div>
+				</section>
+			</section>
+			<section data-auto-animate>
+				<h3>Honorable mentions</h3>
+			</section>
+			<section data-auto-animate>
+				<h3>Honorable mentions</h3>
+				<ul>
+					<li class="fragment">Jamstack</li>
+					<li class="fragment">static web sites</li>
+					<li class="fragment">Headless Architecture</li>
+					<li class="fragment">CSS-in-JS</li>
+					<li class="fragment">Fetch API</li>
+					<li class="fragment">WASM</li>
+				</ul>
 			</section>
 			<section>
 				<section data-background="img/ts.png"></section>
@@ -322,7 +362,8 @@ const Counter = () => {
 						href="https://madnight.github.io/githut/#/pull_requests/2020/3">https://madnight.github.io/githut/</a>
 				</section>
 			</section>
-
+			<section data-background="img/web.png"></section>
+			<section data-background-video="video/hacker keyboard balaclava-sUtoxEZvPyY.mkv" data-background-video-loop="true"></section>
 			<section data-background="img/end.png">
 			</section>
 			<section data-background="img/end-right.png" style="text-align: left;" data-transition="none"
